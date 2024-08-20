@@ -26,7 +26,7 @@ export const uncompressedPublicKeyToAddress = (
   uncompressedPublicKey: Uint8Array
 ) => {
   const address = Buffer.from(
-    secp256k1.publicKeyConvert(uncompressedPublicKey, false)
+    secp256k1.publicKeyConvert(uncompressedPublicKey, true)
   );
   // first byte is discarded
   const hash = keccak256(address.slice(1));
